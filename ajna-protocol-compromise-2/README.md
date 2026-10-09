@@ -44,7 +44,7 @@ source files are licensed `BUSL-1.1`; dependencies retain their own licenses.
 Validate the manifest from the repository root:
 
 ```sh
-cargo run --locked -- validate --dataset datasets/ajna-protocol-compromise-2/audit/dataset.json
+cargo run --locked -- validate --dataset datasets/tiny/ajna-protocol-compromise-2/audit/dataset.json
 ```
 
 Audit the vulnerable source with the built-in agent (`--root` is the dataset
@@ -52,7 +52,7 @@ root, `audit/`):
 
 ```sh
 cargo run --locked -- audit \
-  --root datasets/ajna-protocol-compromise-2/audit \
+  --root datasets/tiny/ajna-protocol-compromise-2/audit \
   --target ajna-v2/src \
   --instruction 'Audit this permissionless ERC20 lending pool for economically exploitable violations of pool solvency and loss allocation.'
 ```
@@ -61,7 +61,7 @@ Score the dataset:
 
 ```sh
 cargo run --locked -- evaluate \
-  --dataset datasets/ajna-protocol-compromise-2/audit/dataset.json \
+  --dataset datasets/tiny/ajna-protocol-compromise-2/audit/dataset.json \
   --endpoint https://api.deepseek.com/chat/completions \
   --model deepseek-flash --jobs 1 --output evaluation-ajna.json
 ```
@@ -70,9 +70,9 @@ Reproduce the exploit locally (requires Foundry). The PoC is intentionally kept
 out of `audit/`, so copy the scripts next to the runnable project first:
 
 ```sh
-cp -r datasets/ajna-protocol-compromise-2/reference/ajna-v2/script \
-      datasets/ajna-protocol-compromise-2/audit/ajna-v2/
-cd datasets/ajna-protocol-compromise-2/audit/ajna-v2
+cp -r datasets/tiny/ajna-protocol-compromise-2/reference/ajna-v2/script \
+      datasets/tiny/ajna-protocol-compromise-2/audit/ajna-v2/
+cd datasets/tiny/ajna-protocol-compromise-2/audit/ajna-v2
 forge script script/AjnaExploit.s.sol:AjnaExploitScript -vvv
 ```
 
