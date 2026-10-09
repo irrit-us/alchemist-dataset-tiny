@@ -1,0 +1,64 @@
+{
+  "decodeBasis": {
+    "KickResult": "src/interfaces/pool/commons/IPoolInternals.sol:14",
+    "PoolState": "src/interfaces/pool/commons/IPoolState.sol:330",
+    "KickerActions.kick": "src/libraries/external/KickerActions.sol:110"
+  },
+  "kicks": {
+    "A": {
+      "frame": 129,
+      "path": "0.13.3.22.0.0",
+      "borrower": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+      "poolStateBefore": {
+        "poolType": 0,
+        "t0Debt": 98687465114971872974,
+        "t0DebtInAuction": 0,
+        "debt": 98687465114971872974,
+        "collateral": 48785531627852886198,
+        "inflator": 1000000000000000000,
+        "isNewInterestAccrued": false,
+        "rate": 1512868055672164,
+        "quoteTokenScale": 1
+      },
+      "result": {
+        "amountToCoverBond": 493437325569859365,
+        "t0PoolDebt": 98706127754155146617,
+        "t0KickedDebt": 49362395196169210130,
+        "debtPreAction": 49343732556985936487,
+        "collateralPreAction": 1054879496563856,
+        "poolDebt": 98706127754155146617,
+        "lup": 99836282890
+      }
+    },
+    "B": {
+      "frame": 134,
+      "path": "0.13.3.23.0.0",
+      "borrower": "0x02d329ebb1da079a89988366b777af300db96f5f",
+      "poolStateBefore": {
+        "poolType": 0,
+        "t0Debt": 98706127754155146617,
+        "t0DebtInAuction": 49362395196169210130,
+        "debt": 98706127754155146617,
+        "collateral": 48785531627852886198,
+        "inflator": 1000000000000000000,
+        "isNewInterestAccrued": false,
+        "rate": 1512868055672164,
+        "quoteTokenScale": 1
+      },
+      "result": {
+        "amountToCoverBond": 493437325579859365,
+        "t0PoolDebt": 98724790393338798477,
+        "t0KickedDebt": 49362395197169588347,
+        "debtPreAction": 49343732557985936487,
+        "collateralPreAction": 48128429404435444755,
+        "poolDebt": 98724790393338798477,
+        "lup": 99836282890
+      }
+    }
+  },
+  "totalDepositBeforeKicks": 98687749844521015658,
+  "B_effectiveLupAtKick": 99836282890,
+  "B_collateralValueAtKick": 4804963493073,
+  "B_debtBeforeItsOwnKickPenalty": 49343732557985936487,
+  "checksPassed": true
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "name": "ajna-protocol-compromise-2-v1",
+  "cases": [
+    {
+      "id": "unsettled-bad-debt-liquidation",
+      "target": "ajna-v2/src",
+      "instruction": "Audit this permissionless ERC20 lending pool for economically exploitable violations of pool solvency and loss allocation. Consider sequences across lending, borrowing, auctions, liquidation and settlement, including actors controlling multiple positions. Use source and local execution to support findings; distinguish assumptions from observed results.",
+      "expected": [
+        {
+          "cwe": "CWE-841",
+          "path": "ajna-v2/src/libraries/external/TakerActions.sol",
+          "line": 168
+        }
+      ]
+    }
+  ]
+}

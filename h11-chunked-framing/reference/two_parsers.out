@@ -1,0 +1,8 @@
+h11 0.14.0 (skips any 2 bytes): 2 request(s)
+  target='/one' body=b'AAAAA45'
+  target='/two' body=b''
+lenient proxy (reads to CRLF): 1 request(s)
+  target='/one' body=b'AAAAA0\r\n\r\nGET /two HTTP/1.1\r\nHost: localhost\r\nTransfer-Encoding: chunked\r\n'
+
+Both parsers accept the stream, but they delimit it differently.
+That disagreement is the request-smuggling precondition, not a completed exploit.

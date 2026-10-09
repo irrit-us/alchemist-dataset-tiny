@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "name": "filelock-toctou-v1",
+  "cases": [
+    {
+      "id": "lock-symlink-truncation",
+      "target": "filelock",
+      "instruction": "A service uses filelock to take an exclusive lock at a path inside a directory an unprivileged local attacker can write to, then writes secrets to a sibling file. Audit the Unix lock-acquisition path for file-system semantics that let the attacker choose which file is opened when the lock is taken. Report the exact sink line and explain how the attacker-influenced path can truncate a file other than the lock. This is the Unix path only.",
+      "expected": [
+        {"cwe": "CWE-59", "path": "filelock/_unix.py", "line": 41}
+      ]
+    }
+  ]
+}

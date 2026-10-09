@@ -1,0 +1,768 @@
+{
+  "schema_version": 1,
+  "origin": "User-provided Ajna Protocol Compromise 2 directory",
+  "files": [
+    {
+      "path": "audit/ajna-v2/foundry.toml",
+      "source_path": "ajna-v2/foundry.toml",
+      "bytes": 314,
+      "sha256": "ba1a6c40f1000a0e28f1c6413bc61fc562755a2d482bd21a8260697e5d7d75d2"
+    },
+    {
+      "path": "audit/ajna-v2/lib/clones-with-immutable-args/src/Clone.sol",
+      "source_path": "ajna-v2/lib/clones-with-immutable-args/src/Clone.sol",
+      "bytes": 3177,
+      "sha256": "1fe3a23fa9c9768f5abc56af80bcf322e1179155a2e2ee9c0555c0d945c9d755"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/.gitattributes",
+      "source_path": "ajna-v2/lib/forge-std/.gitattributes",
+      "bytes": 31,
+      "sha256": "2dc1e6a6e64956c4e97344a48324d1ac27842b079fbda3412618f8f8f24515a4"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/.github/workflows/ci.yml",
+      "source_path": "ajna-v2/lib/forge-std/.github/workflows/ci.yml",
+      "bytes": 3678,
+      "sha256": "6f651a57ec8434c3b16b66d337391156c488d68bb66b170bb4625fb36448adfa"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/.github/workflows/sync.yml",
+      "source_path": "ajna-v2/lib/forge-std/.github/workflows/sync.yml",
+      "bytes": 825,
+      "sha256": "e089cd84e47322d1cd8d4b5baeeaf6b6bc39f0956979fb277f0b2c1fc706b578"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/.gitignore",
+      "source_path": "ajna-v2/lib/forge-std/.gitignore",
+      "bytes": 30,
+      "sha256": "5bf2d98930b220d7af822314ddd3d13247835a28c3cdde8015896579d4807a0b"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/foundry.toml",
+      "source_path": "ajna-v2/lib/forge-std/foundry.toml",
+      "bytes": 832,
+      "sha256": "d214b5fe90e86ba7e25df4ab7e6516ceb5fd8d349aa0e47f6b6682261abc3be7"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/LICENSE-APACHE",
+      "source_path": "ajna-v2/lib/forge-std/LICENSE-APACHE",
+      "bytes": 11100,
+      "sha256": "933a9600adc4c65b8c60a6f1b74ccb87709f78fdfcbe12b6ed76d8d80c8a4b9b"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/LICENSE-MIT",
+      "source_path": "ajna-v2/lib/forge-std/LICENSE-MIT",
+      "bytes": 1098,
+      "sha256": "c288b6c79d923d48605b45622dc73c0514f5de5a74530852aa725a353310353c"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/package.json",
+      "source_path": "ajna-v2/lib/forge-std/package.json",
+      "bytes": 532,
+      "sha256": "7f5fed86504800daee403efe46a8ef9f4a8be11aba0890dee93cc4f41cb6969e"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/README.md",
+      "source_path": "ajna-v2/lib/forge-std/README.md",
+      "bytes": 8710,
+      "sha256": "87966d913ba2264c1db59def133442212d59c20e3a7e9e51f9125a0a4819007c"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/scripts/vm.py",
+      "source_path": "ajna-v2/lib/forge-std/scripts/vm.py",
+      "bytes": 17868,
+      "sha256": "faeb6bc0b0c195c5e216483ce51c69ec7ca6fac09e067ef363e39180ef5152a1"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/Base.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/Base.sol",
+      "bytes": 1828,
+      "sha256": "3adf6bf1c7a70ce1719d37807d2f1bca72d3b0238be81b51bd8c5f62eba1da43"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/console.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/console.sol",
+      "bytes": 68220,
+      "sha256": "41223584475aa5205b2540f08f34b68f98244f247251693e5e2bd033e2db08d8"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/console2.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/console2.sol",
+      "bytes": 71234,
+      "sha256": "f7e7921d4879fe506680ecb865a53f44dd23893e8d16731005a52702e74490de"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/interfaces/IERC1155.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/interfaces/IERC1155.sol",
+      "bytes": 7694,
+      "sha256": "07cd927a2d44241f5fd9808987019db3380c28847213f95674a63343526920d4"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/interfaces/IERC165.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/interfaces/IERC165.sol",
+      "bytes": 549,
+      "sha256": "467093c97441fda90ca7dc5a8e8a01a0bf225f7b09b6eb3167541170ed85807b"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/interfaces/IERC20.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/interfaces/IERC20.sol",
+      "bytes": 2110,
+      "sha256": "1a47f804f53520f1e8d9da170be30af18352f8dfc9281b31025a961c84129939"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/interfaces/IERC4626.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/interfaces/IERC4626.sol",
+      "bytes": 12152,
+      "sha256": "17c05e07a544191a7c5aabad61d33d4a090f1ac11bd80aaa297e589a74197b2c"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/interfaces/IERC721.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/interfaces/IERC721.sol",
+      "bytes": 9190,
+      "sha256": "e1eebdf6fa670991c180d3edac306214e8ec6d2a34da988494a0212ecbdb459f"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/interfaces/IMulticall3.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/interfaces/IMulticall3.sol",
+      "bytes": 2258,
+      "sha256": "984896bb1275945047e9f81ea5c8c5dd331e511e9bd208b786b835f91d5bc055"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/mocks/MockERC20.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/mocks/MockERC20.sol",
+      "bytes": 8554,
+      "sha256": "e87a0bf7a695de207c335906c520cb2c0e30cbffd094cc9a7e17e783e7c0dce2"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/mocks/MockERC721.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/mocks/MockERC721.sol",
+      "bytes": 8251,
+      "sha256": "0b596f4324e07b8556d287537e79c5177594f6f2e24119abdfaaff1a736f4ed5"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/safeconsole.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/safeconsole.sol",
+      "bytes": 411146,
+      "sha256": "a50db7586f876f5859a7d271b74786e2ee133efe0f8fb3d8789ca9e461e7366a"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/Script.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/Script.sol",
+      "bytes": 859,
+      "sha256": "37a936b31554631201d2c5560882e8a4e32060dd7fbd01714cd129dd6071487c"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/StdAssertions.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/StdAssertions.sol",
+      "bytes": 24029,
+      "sha256": "9795e71054414332c56673d60d0d868f657224a1c52ceb6c3884d7f667338095"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/StdChains.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/StdChains.sol",
+      "bytes": 12099,
+      "sha256": "305ca9ee20d5dc1219fe341f3594c1d39eadc1eb6df3889c63449d82dc5be235"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/StdCheats.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/StdCheats.sol",
+      "bytes": 32291,
+      "sha256": "e17827eff0400e3723af05c2bf59866028f7e16981c7d1ae069c7b398d55d84e"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/StdError.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/StdError.sol",
+      "bytes": 1028,
+      "sha256": "a10f8f4d12e7716942c3e20753f1ea0af0cc707ca58eaaa01da8246209ed8151"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/StdInvariant.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/StdInvariant.sol",
+      "bytes": 3746,
+      "sha256": "f42baa977fa71b876ba94fe58accd3b6bf477926a715c8eb959179122b63b2e9"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/StdJson.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/StdJson.sol",
+      "bytes": 6402,
+      "sha256": "8962515189bcedcf63f7ee84785fe9468a89746c741400dd5a9667f3c9a264d9"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/StdMath.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/StdMath.sol",
+      "bytes": 1403,
+      "sha256": "473474e8608945a1c87a606ea85e6b605dcc3186d361796f60f36011964036da"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/StdStorage.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/StdStorage.sol",
+      "bytes": 18315,
+      "sha256": "272edb52519f2b405491e447991e145eda87b61572c05b9e6cd99786be94d572"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/StdStyle.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/StdStyle.sol",
+      "bytes": 10795,
+      "sha256": "be2eea9cbe407894fd24ae1f824d03ca35ff5fe3ab684850e7190fbc098417df"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/StdToml.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/StdToml.sol",
+      "bytes": 6402,
+      "sha256": "bffcb92d1c632cd131477de41220773381d12a9a5f8b0d03cef2504131238c73"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/StdUtils.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/StdUtils.sol",
+      "bytes": 10882,
+      "sha256": "4cd9a22a5e18c0f51cf10749a12c95dd866d60b9f2a82e6e24680d68b9f0a3f1"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/Test.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/Test.sol",
+      "bytes": 1079,
+      "sha256": "210c7e58f1ed04060591ade050734c4642e5e6fc6c009796b84e8efc34f0182b"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/src/Vm.sol",
+      "source_path": "ajna-v2/lib/forge-std/src/Vm.sol",
+      "bytes": 92554,
+      "sha256": "51fca2b2fa3f3c63522ecc7456b97b3c6fe431293175a1771061f745b618e8c1"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/compilation/CompilationScript.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/compilation/CompilationScript.sol",
+      "bytes": 405,
+      "sha256": "158df6eb8b6d9cac73f1d5f1b189e0c5da64ba811d417eec503e88200f88eb49"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/compilation/CompilationScriptBase.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/compilation/CompilationScriptBase.sol",
+      "bytes": 413,
+      "sha256": "736245d02056c31b6c173130213e8a40a694ff750cc3b278c98f84d33e347246"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/compilation/CompilationTest.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/compilation/CompilationTest.sol",
+      "bytes": 399,
+      "sha256": "71f00dde6c793de7ee1eab3dfeb209197130e0bb2750f26ef7d736e19bf02a96"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/compilation/CompilationTestBase.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/compilation/CompilationTestBase.sol",
+      "bytes": 407,
+      "sha256": "4b87db486b6e967cb6e939a3b16254db0a77ac846c337ed9e34ab5ca1c8dfdbf"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/fixtures/broadcast.log.json",
+      "source_path": "ajna-v2/lib/forge-std/test/fixtures/broadcast.log.json",
+      "bytes": 11141,
+      "sha256": "b00fbfde3288bb2af82d66aca0defab98954b6a73b896b379d02a33d080579b1"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/fixtures/test.json",
+      "source_path": "ajna-v2/lib/forge-std/test/fixtures/test.json",
+      "bytes": 80,
+      "sha256": "85a9ab61b49d9a83e896898ae696c09d8185505801d5403c077d9c0b507b2457"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/fixtures/test.toml",
+      "source_path": "ajna-v2/lib/forge-std/test/fixtures/test.toml",
+      "bytes": 49,
+      "sha256": "fac3b6ec72b38c67a49ffadb13ecab5afea65ec22414428b73a089d4dab3b63f"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/mocks/MockERC20.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/mocks/MockERC20.t.sol",
+      "bytes": 14466,
+      "sha256": "a64d05cb1ba2ee77acd864c29940cdf945081bf16710846b1129ad3c7b44d874"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/mocks/MockERC721.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/mocks/MockERC721.t.sol",
+      "bytes": 22923,
+      "sha256": "d693c73626f69cfe5047e5ad6eaa020d079ea796e32429532dac45ca49d928e1"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/StdAssertions.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/StdAssertions.t.sol",
+      "bytes": 4968,
+      "sha256": "52982a8b1e0b91ed0cb4ec9e803df76222fd4bc815c48461b541eda1042cbc9c"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/StdChains.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/StdChains.t.sol",
+      "bytes": 9753,
+      "sha256": "e355f3c39916abe4fdc7c49183dcd9faa5635faad91274058f2fc2af808cbc98"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/StdCheats.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/StdCheats.t.sol",
+      "bytes": 22849,
+      "sha256": "f6132dbc1e4a9bc6f2e298badcdb0b430974a8273c6ced586156822f4f305af8"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/StdError.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/StdError.t.sol",
+      "bytes": 2711,
+      "sha256": "88a60f19bd1382c84fc7776b88e5d31c5ad0ec450790bb2df6f3fc74c4f1c3f1"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/StdJson.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/StdJson.t.sol",
+      "bytes": 1301,
+      "sha256": "2ab05999b277e45a3ff44382b759ac88e9dab044f204cd43e3fe1b80a8e34a73"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/StdMath.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/StdMath.t.sol",
+      "bytes": 8990,
+      "sha256": "6c1b16c6c3dcc4b068718e709208662a5028e56c844597a1ffa31bf500acc4f6"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/StdStorage.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/StdStorage.t.sol",
+      "bytes": 18455,
+      "sha256": "e59b4e0bf873a2de2186659bcf838c2fa5114827c07f9444f61272e4ad4703a6"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/StdStyle.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/StdStyle.t.sol",
+      "bytes": 5940,
+      "sha256": "2370128a70c2dd4f51d944aabb6fa9499517e37002d1b235d0d5d9bb608a449e"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/StdToml.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/StdToml.t.sol",
+      "bytes": 1299,
+      "sha256": "8163f558592220f6cc7e1605ce080c943105301af6994afecbf7d4bcca24f8d5"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/StdUtils.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/StdUtils.t.sol",
+      "bytes": 15172,
+      "sha256": "bc00cb245bd1e9c37219cd52b348ffdbd8fa87cffc607bf12e5152808814e6f8"
+    },
+    {
+      "path": "audit/ajna-v2/lib/forge-std/test/Vm.t.sol",
+      "source_path": "ajna-v2/lib/forge-std/test/Vm.t.sol",
+      "bytes": 622,
+      "sha256": "606c4485098c97e5695dc9b5c9bb81111b847324a9dcc654ad433a4601886012"
+    },
+    {
+      "path": "audit/ajna-v2/lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol",
+      "source_path": "ajna-v2/lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol",
+      "bytes": 2841,
+      "sha256": "3b30604df38d0f9b2b281a3e6661eb1b9cd577579e66225c674df21ca5b89b2c"
+    },
+    {
+      "path": "audit/ajna-v2/lib/openzeppelin-contracts/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
+      "source_path": "ajna-v2/lib/openzeppelin-contracts/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
+      "bytes": 2252,
+      "sha256": "3e7aa0e0f69eec8f097ad664d525e7b3f0a3fda8dcdd97de5433ddb131db86ef"
+    },
+    {
+      "path": "audit/ajna-v2/lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+      "source_path": "ajna-v2/lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+      "bytes": 2767,
+      "sha256": "94f23e4af51a18c2269b355b8c7cf4db8003d075c9c541019eb8dcf4122864d5"
+    },
+    {
+      "path": "audit/ajna-v2/lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
+      "source_path": "ajna-v2/lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
+      "bytes": 4456,
+      "sha256": "0c8a43f12ac2081c6194d54da96f02ebc457760d6514f6b940689719fcef8c0a"
+    },
+    {
+      "path": "audit/ajna-v2/lib/openzeppelin-contracts/contracts/utils/Address.sol",
+      "source_path": "ajna-v2/lib/openzeppelin-contracts/contracts/utils/Address.sol",
+      "bytes": 9159,
+      "sha256": "8160a4242e8a7d487d940814e5279d934e81f0436689132a4e73394bab084a6d"
+    },
+    {
+      "path": "audit/ajna-v2/lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+      "source_path": "ajna-v2/lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+      "bytes": 12505,
+      "sha256": "8059d642ec219d0b9b62fbc76912079529cf494cac988abe5e371f1168b29b0f"
+    },
+    {
+      "path": "audit/ajna-v2/lib/openzeppelin-contracts/contracts/utils/math/SafeCast.sol",
+      "source_path": "ajna-v2/lib/openzeppelin-contracts/contracts/utils/math/SafeCast.sol",
+      "bytes": 35081,
+      "sha256": "a5dab332e2caa1db5aae709693e59431132aa720528d0245a647dde6e93d7436"
+    },
+    {
+      "path": "audit/ajna-v2/lib/openzeppelin-contracts/contracts/utils/Multicall.sol",
+      "source_path": "ajna-v2/lib/openzeppelin-contracts/contracts/utils/Multicall.sol",
+      "bytes": 718,
+      "sha256": "f662e5833bb7af42fcccdc2ba6057aeaf05003acae117f2f6c29643f3208a093"
+    },
+    {
+      "path": "audit/ajna-v2/lib/prb-math/contracts/PRBMath.sol",
+      "source_path": "ajna-v2/lib/prb-math/contracts/PRBMath.sol",
+      "bytes": 25275,
+      "sha256": "3ef522031838f10557feebf5cfd49cb2d0c15f42038b648bc33a7f3ebb3d6500"
+    },
+    {
+      "path": "audit/ajna-v2/lib/prb-math/contracts/PRBMathSD59x18.sol",
+      "source_path": "ajna-v2/lib/prb-math/contracts/PRBMathSD59x18.sol",
+      "bytes": 31277,
+      "sha256": "fde370810a6369e80b90bd22d823f77f9af3617cc3624f085dec0a682a401100"
+    },
+    {
+      "path": "audit/ajna-v2/lib/prb-math/contracts/PRBMathUD60x18.sol",
+      "source_path": "ajna-v2/lib/prb-math/contracts/PRBMathUD60x18.sol",
+      "bytes": 25069,
+      "sha256": "f433763fb95aea1fec7bea4829262c4d95c73acb21ef5d926c9e3aba89e544ca"
+    },
+    {
+      "path": "audit/ajna-v2/src/base/FlashloanablePool.sol",
+      "source_path": "ajna-v2/src/base/FlashloanablePool.sol",
+      "bytes": 3573,
+      "sha256": "cf772b8809310240cf0382512aad0c134e2a44038a43694266e6decaebe72c2e"
+    },
+    {
+      "path": "audit/ajna-v2/src/base/Pool.sol",
+      "source_path": "ajna-v2/src/base/Pool.sol",
+      "bytes": 35312,
+      "sha256": "95860c14ac464654a8c42bc53cbd0ffa42645d1cdaa08ff182164daf55dfe7eb"
+    },
+    {
+      "path": "audit/ajna-v2/src/ERC20Pool.sol",
+      "source_path": "ajna-v2/src/ERC20Pool.sol",
+      "bytes": 19906,
+      "sha256": "d9651abd69673ea2895b1452dc089285ef541b77477706e85b2c984a6e4001bb"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/commons/IPoolBorrowerActions.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/commons/IPoolBorrowerActions.sol",
+      "bytes": 585,
+      "sha256": "a81cd434a7f1acdf1b3b8aa7008ee4adbc366a1d7ec92f7d14b691bf17401f74"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/commons/IPoolDerivedState.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/commons/IPoolDerivedState.sol",
+      "bytes": 1714,
+      "sha256": "b1948ea8b5bd41a7138e3226f0b16782de4231383841f64add5d2aa3f455bf73"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/commons/IPoolErrors.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/commons/IPoolErrors.sol",
+      "bytes": 6364,
+      "sha256": "f4f8abc07505fe62e9367a2b28ec231f02a6e1282e3e5f85418232f15b1b480b"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/commons/IPoolEvents.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/commons/IPoolEvents.sol",
+      "bytes": 14165,
+      "sha256": "d2cd2d1fbd9c1e5db906d327f0f1b13d6f62330d5f52b4ad27075f60d50205d8"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/commons/IPoolImmutables.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/commons/IPoolImmutables.sol",
+      "bytes": 891,
+      "sha256": "6b879b906bb4b208d2bf37dc273f3bfd6a65000b8f222b481eebd7ca1d0fd972"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/commons/IPoolInternals.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/commons/IPoolInternals.sol",
+      "bytes": 7564,
+      "sha256": "433ee5ce916f8f1bbd96ab3483849d8501c76024e60b3ad142f96f6cf9953894"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/commons/IPoolKickerActions.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/commons/IPoolKickerActions.sol",
+      "bytes": 1586,
+      "sha256": "87de154a49e8b8e9dbd0d17525dcbee8ff3ddd5ebf72de244bf085e245b6cea2"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/commons/IPoolLenderActions.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/commons/IPoolLenderActions.sol",
+      "bytes": 4105,
+      "sha256": "b8a4c2b3bf3ba6a6c75ecf4630924e10e792249e32f832ce2fb17626ffd4fefc"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/commons/IPoolLPActions.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/commons/IPoolLPActions.sol",
+      "bytes": 2833,
+      "sha256": "3d702ebccddd49c1b076dfbe9332d53357c2897d4d28d8f587aa972b1472d6c1"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/commons/IPoolSettlerActions.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/commons/IPoolSettlerActions.sol",
+      "bytes": 599,
+      "sha256": "2a4c03600035af9e3e5bf0067631c147780d4d00b8cfe41ba69faf6f9bade7f8"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/commons/IPoolState.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/commons/IPoolState.sol",
+      "bytes": 17876,
+      "sha256": "8990c1eb1961ddc1345ae25e550e73a3fc899fdd5195fbaa5917db33f5cd4b1a"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/commons/IPoolTakerActions.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/commons/IPoolTakerActions.sol",
+      "bytes": 2184,
+      "sha256": "ca22e4487ebb2a64e778a758d5afe488c2a664ac1befff4bea72fd8adb53efb9"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/erc20/IERC20Pool.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/erc20/IERC20Pool.sol",
+      "bytes": 1202,
+      "sha256": "3ab340319034d898d6279686f08f85be1b22dedcaa07ec4b6126762e8aa81745"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/erc20/IERC20PoolBorrowerActions.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/erc20/IERC20PoolBorrowerActions.sol",
+      "bytes": 2083,
+      "sha256": "a24bfeb1998e47d55ff4f221f56a08452d3edf16b70367dd23b472572c1a0f3c"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/erc20/IERC20PoolEvents.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/erc20/IERC20PoolEvents.sol",
+      "bytes": 1264,
+      "sha256": "49c7630d8353ee2ad71e989c4f014a4f3b33e25ceaa4f4f445dc295231787f19"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/erc20/IERC20PoolImmutables.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/erc20/IERC20PoolImmutables.sol",
+      "bytes": 352,
+      "sha256": "79487239453f954ce3b5b71eaab0fd6bdeb04e62473bc2ac7de0eceb919db915"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/erc20/IERC20PoolLenderActions.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/erc20/IERC20PoolLenderActions.sol",
+      "bytes": 778,
+      "sha256": "e08ef3a1100a52a672a34866c40304f92b581381553537f436763e65b4ec6e45"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/erc20/IERC20Taker.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/erc20/IERC20Taker.sol",
+      "bytes": 758,
+      "sha256": "76904c7b7ef0a14e950e95d1b7eea0bec61535349a432c716b1af1989b6030ea"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/IERC3156FlashBorrower.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/IERC3156FlashBorrower.sol",
+      "bytes": 735,
+      "sha256": "7d6d8eaa8072fb5ae6c537c7bd913d2f22cb0ebc0c5db117a107c7a5b8efa083"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/IERC3156FlashLender.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/IERC3156FlashLender.sol",
+      "bytes": 1467,
+      "sha256": "982fb92d21ab4da8cd395cba812525efb9a08bd77e03086b47035e0b115198f2"
+    },
+    {
+      "path": "audit/ajna-v2/src/interfaces/pool/IPool.sol",
+      "source_path": "ajna-v2/src/interfaces/pool/IPool.sol",
+      "bytes": 1906,
+      "sha256": "0e9b534d941861c046aa3cb257267cbd4f6316e93617a9d3bcbe1f993522f99f"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/external/BorrowerActions.sol",
+      "source_path": "ajna-v2/src/libraries/external/BorrowerActions.sol",
+      "bytes": 19634,
+      "sha256": "6555e20a837e084999886a3c4c0092d45009b71feaba72e9676d35a9e7425bd6"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/external/KickerActions.sol",
+      "source_path": "ajna-v2/src/libraries/external/KickerActions.sol",
+      "bytes": 17754,
+      "sha256": "b41db30f8d286902be74f805ddcd9413815e02d1b7fc79247051557b238b1ce8"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/external/LenderActions.sol",
+      "source_path": "ajna-v2/src/libraries/external/LenderActions.sol",
+      "bytes": 34556,
+      "sha256": "e7eafb56145e6be25934919f316c3cf35ddc749c569f7d5b5ef1a1f15c02e574"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/external/LPActions.sol",
+      "source_path": "ajna-v2/src/libraries/external/LPActions.sol",
+      "bytes": 9243,
+      "sha256": "c7c70bc7232494207f726d15366fe64e8919fd025c9094005a9fbe1f0eaf7a9b"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/external/PoolCommons.sol",
+      "source_path": "ajna-v2/src/libraries/external/PoolCommons.sol",
+      "bytes": 17916,
+      "sha256": "c526abfeb240cc128235b094a144a4f34c69b5c678198c840252f05d31138e5c"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/external/SettlerActions.sol",
+      "source_path": "ajna-v2/src/libraries/external/SettlerActions.sol",
+      "bytes": 22086,
+      "sha256": "5b27cab1ea81478f53fd77e3439806c0fadbbf3951b1174359cedbf96da87370"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/external/TakerActions.sol",
+      "source_path": "ajna-v2/src/libraries/external/TakerActions.sol",
+      "bytes": 34067,
+      "sha256": "ee5d26d26722f4854f7bfb5225d9a2a689b56215ee7a0676098341902b945056"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/helpers/PoolHelper.sol",
+      "source_path": "ajna-v2/src/libraries/helpers/PoolHelper.sol",
+      "bytes": 18176,
+      "sha256": "2e8e92176d09d6200a530f167b9024f5f9aee0e9b243eec4bbaed638d54f6e09"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/helpers/RevertsHelper.sol",
+      "source_path": "ajna-v2/src/libraries/helpers/RevertsHelper.sol",
+      "bytes": 4640,
+      "sha256": "27372cd862d59d426d758bec36a092a449ca0934a33ae6bdd2e4a802c1710773"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/internal/Buckets.sol",
+      "source_path": "ajna-v2/src/libraries/internal/Buckets.sol",
+      "bytes": 10567,
+      "sha256": "05644e7e8be98fc0e3aa64e8b297c81ed5beb4a51a83382958911771df89cdfe"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/internal/Deposits.sol",
+      "source_path": "ajna-v2/src/libraries/internal/Deposits.sol",
+      "bytes": 18497,
+      "sha256": "1c5743e46a4ff5dc13d40b2181fa8c354ff48d40a20389dedbd2ecc17e75d5e9"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/internal/Loans.sol",
+      "source_path": "ajna-v2/src/libraries/internal/Loans.sol",
+      "bytes": 10081,
+      "sha256": "4e5a099f33d3c4b717dcb508831b19bb2ecee4981f45a83e4590e0309cf9d812"
+    },
+    {
+      "path": "audit/ajna-v2/src/libraries/internal/Maths.sol",
+      "source_path": "ajna-v2/src/libraries/internal/Maths.sol",
+      "bytes": 2240,
+      "sha256": "7bb289b769ee8dc83e362b30b8e309292290985416f602fc130df51a9310df80"
+    },
+    {
+      "path": "reference/ajna-v2/PROVENANCE.md",
+      "source_path": "ajna-v2/PROVENANCE.md",
+      "bytes": 6784,
+      "sha256": "09a6edd41629292689ce1356b1687e29909d6a2163e45111f955155eb7c5e8bb"
+    },
+    {
+      "path": "reference/ajna-v2/script/AjnaExploit.s.sol",
+      "source_path": "ajna-v2/script/AjnaExploit.s.sol",
+      "bytes": 16587,
+      "sha256": "a08207574d608d7a50ff15748cd9a66e8bf73e6843ac479b91f2548f4302a029"
+    },
+    {
+      "path": "reference/ajna-v2/script/AjnaExploitExactReplay.s.sol",
+      "source_path": "ajna-v2/script/AjnaExploitExactReplay.s.sol",
+      "bytes": 7692,
+      "sha256": "2324e8a2e45c0e24dbd51e4adac5b3a148a4e78454dab3ef050f9a4566817898"
+    },
+    {
+      "path": "reference/ajna-v2/script/generated/ExploitPreState.sol",
+      "source_path": "ajna-v2/script/generated/ExploitPreState.sol",
+      "bytes": 14899,
+      "sha256": "a0d8ca7f05da3a64893c6ef1223870dd4655cb15fea1712d78d80abe05aca17f"
+    },
+    {
+      "path": "reference/ajna-v2/script/helpers/ClonesWithImmutableArgs.sol",
+      "source_path": "ajna-v2/script/helpers/ClonesWithImmutableArgs.sol",
+      "bytes": 3844,
+      "sha256": "b83a67b34f31037be5c3566819b97115602f194f01f7632c9ff4c8479f967af1"
+    },
+    {
+      "path": "reference/ajna-v2/script/YusdPoolForkExploit.s.sol",
+      "source_path": "ajna-v2/script/YusdPoolForkExploit.s.sol",
+      "bytes": 10037,
+      "sha256": "572581f34781fc2cf9338530f00a4577b3f5e9ebd314f018d7edc5be49fa3df9"
+    },
+    {
+      "path": "reference/ECONOMIC_MODEL_AND_EXPLOIT.md",
+      "source_path": "ECONOMIC_MODEL_AND_EXPLOIT.md",
+      "bytes": 21545,
+      "sha256": "d8882e7eca02dde28cb8a04c701fc6066046c70056180e399640637884da188f"
+    },
+    {
+      "path": "reference/README.md",
+      "source_path": "README.md",
+      "bytes": 22180,
+      "sha256": "2dc600105dd6d9b26db950b2f48b4440eb9e59307ed64e2aaa249405d313d66d"
+    },
+    {
+      "path": "reference/ROOT_CAUSE_AND_SCOPE.md",
+      "source_path": "ROOT_CAUSE_AND_SCOPE.md",
+      "bytes": 8095,
+      "sha256": "17fab1487a056246b629ff33966321e6db2315f36d614c67b40f32f4e854f349"
+    },
+    {
+      "path": "reference/verification/accounting_verification.json",
+      "source_path": "verification/accounting_verification.json",
+      "bytes": 20009,
+      "sha256": "40f6742d1de0535763683a13be52038d1787b7de7496f8926d5202b8019faf13"
+    },
+    {
+      "path": "reference/verification/decoded_evidence.json",
+      "source_path": "verification/decoded_evidence.json",
+      "bytes": 446510,
+      "sha256": "d1c0f4df539e53ece79cf87f3c9dcb448827c736ea93f6c34ef3fae2d9039466"
+    },
+    {
+      "path": "reference/verification/exploit_callstack.md",
+      "source_path": "verification/exploit_callstack.md",
+      "bytes": 49369,
+      "sha256": "3ac261d4b2595996c286030a2e829fb753be9d094fa4cd1aea3a2ff873505ba7"
+    },
+    {
+      "path": "reference/verification/kick_boundary_verification.json",
+      "source_path": "verification/kick_boundary_verification.json",
+      "bytes": 2189,
+      "sha256": "44fa409be10daaeb5d477a639bbe1251dd07264e4115fa62bf62b4e81d781d24"
+    },
+    {
+      "path": "reference/verification/raw/drpc_exploit_calltrace.json",
+      "source_path": "verification/raw/drpc_exploit_calltrace.json",
+      "bytes": 127494,
+      "sha256": "baadbedb23fb7f20a5166ce4045b2fba8ae4b41b70277af4a40eb9a1c0cb22b3"
+    },
+    {
+      "path": "reference/verification/raw/drpc_setup_calltrace.json",
+      "source_path": "verification/raw/drpc_setup_calltrace.json",
+      "bytes": 141622,
+      "sha256": "171e7db6ebc70e7a005f9a14ebd73c5a279fc584f52f9d05e7a8e5364525a9fc"
+    },
+    {
+      "path": "reference/verification/raw/exploit_prestate_diff.json",
+      "source_path": "verification/raw/exploit_prestate_diff.json",
+      "bytes": 126306,
+      "sha256": "19864d21384c964b8e7a358263a7f8b0f89aa72912e18960bf17b3d657ecf74b"
+    },
+    {
+      "path": "reference/verification/raw/exploit_prestate_full.json",
+      "source_path": "verification/raw/exploit_prestate_full.json",
+      "bytes": 484079,
+      "sha256": "b19bf9140ae1a541e9b7ff1ca56570c5f8f7746e52f6ffcd7f1cd36dbce580e8"
+    },
+    {
+      "path": "reference/verification/raw/exploit_receipt.json",
+      "source_path": "verification/raw/exploit_receipt.json",
+      "bytes": 27690,
+      "sha256": "fda5244ed19f62d52a72ab62228b55e0a5f7d3363417d708201822cd48d1dbae"
+    },
+    {
+      "path": "reference/verification/raw/setup_receipt.json",
+      "source_path": "verification/raw/setup_receipt.json",
+      "bytes": 27842,
+      "sha256": "9d2231ab8197e642141e5a26fcaff61fe51dd63bc89b4ecd98b78f600c6f4f77"
+    },
+    {
+      "path": "reference/verification/setup_callstack.md",
+      "source_path": "verification/setup_callstack.md",
+      "bytes": 53811,
+      "sha256": "a667389ccde3caceeee8657b49f34eb1f47265abbc9469db48a93b44f73daef0"
+    },
+    {
+      "path": "reference/VERIFIED_CALLSTACK.md",
+      "source_path": "VERIFIED_CALLSTACK.md",
+      "bytes": 14585,
+      "sha256": "a263510f0f9afc20959f6fc108dabf83e5afa10d9e8d304e4a8bc21d420ff91e"
+    }
+  ]
+}

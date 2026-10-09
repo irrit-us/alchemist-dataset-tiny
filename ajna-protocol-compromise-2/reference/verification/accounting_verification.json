@@ -1,0 +1,645 @@
+{
+  "historicState": {
+    "postsetup": {
+      "borrowerA": {
+        "t0Debt": 49362395196169210130,
+        "collateral": 1054879496563856,
+        "t0Np": 46847420273778676282238
+      },
+      "borrowerB": {
+        "t0Debt": 49362395197169588347,
+        "collateral": 48128429404435444755,
+        "t0Np": 1026802322998020354
+      },
+      "bucket2000": {
+        "lps": 49343732556986936488,
+        "collateral": 0,
+        "bankruptcyTime": 0,
+        "deposit": 49343732556986936488,
+        "scale": 1004568828197116541
+      },
+      "bucket4151": {
+        "lps": 50168949911514829567,
+        "collateral": 0,
+        "bankruptcyTime": 0,
+        "deposit": 49343732557986936488,
+        "scale": 1004485960499671769
+      },
+      "bucketExchangeRate2000": {
+        "exchangeRate_": 1000000000000000000
+      },
+      "debt": {
+        "pendingDebt": 98724790393338798477,
+        "storedDebt": 98724790393338798477,
+        "debtInAuction": 98724790393338798477,
+        "t0Debt2ToCollateral": 0
+      },
+      "inflator": {
+        "inflator": 1000000000000000000,
+        "lastUpdate": 1787930315
+      },
+      "interest": {
+        "rate": 1512868055672164,
+        "lastUpdate": 1787930267
+      },
+      "auctionA": {
+        "kicker_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "bondFactor_": 10000000000000000,
+        "bondSize_": 493437325569859365,
+        "kickTime_": 1787930315,
+        "kickMomp_": 1025251253128124958,
+        "neutralPrice_": 46847420273778676282238,
+        "head_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "next_": "0x02d329ebb1da079a89988366b777af300db96f5f",
+        "prev_": "0x0000000000000000000000000000000000000000",
+        "alreadyTaken_": false
+      },
+      "auctionB": {
+        "kicker_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "bondFactor_": 10000000000000000,
+        "bondSize_": 493437325579859365,
+        "kickTime_": 1787930315,
+        "kickMomp_": 1025251253128124958,
+        "neutralPrice_": 1026802322998020354,
+        "head_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "next_": "0x0000000000000000000000000000000000000000",
+        "prev_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "alreadyTaken_": false
+      }
+    },
+    "preexploit": {
+      "borrowerA": {
+        "t0Debt": 49362395196169210130,
+        "collateral": 1054879496563856,
+        "t0Np": 46847420273778676282238
+      },
+      "borrowerB": {
+        "t0Debt": 49362395197169588347,
+        "collateral": 48128429404435444755,
+        "t0Np": 1026802322998020354
+      },
+      "bucket2000": {
+        "lps": 49343732556986936488,
+        "collateral": 0,
+        "bankruptcyTime": 0,
+        "deposit": 49343732556986936488,
+        "scale": 1004568828197116541
+      },
+      "bucket4151": {
+        "lps": 50168949911514829567,
+        "collateral": 0,
+        "bankruptcyTime": 0,
+        "deposit": 49343732557986936488,
+        "scale": 1004485960499671769
+      },
+      "bucketExchangeRate2000": {
+        "exchangeRate_": 1000000000000000000
+      },
+      "debt": {
+        "pendingDebt": 98724807556958886274,
+        "storedDebt": 98724790393338798477,
+        "debtInAuction": 98724790393338798477,
+        "t0Debt2ToCollateral": 0
+      },
+      "inflator": {
+        "inflator": 1000000000000000000,
+        "lastUpdate": 1787930315
+      },
+      "interest": {
+        "rate": 1512868055672164,
+        "lastUpdate": 1787930267
+      },
+      "auctionA": {
+        "kicker_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "bondFactor_": 10000000000000000,
+        "bondSize_": 493437325569859365,
+        "kickTime_": 1787930315,
+        "kickMomp_": 1025251253128124958,
+        "neutralPrice_": 46847420273778676282238,
+        "head_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "next_": "0x02d329ebb1da079a89988366b777af300db96f5f",
+        "prev_": "0x0000000000000000000000000000000000000000",
+        "alreadyTaken_": false
+      },
+      "auctionB": {
+        "kicker_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "bondFactor_": 10000000000000000,
+        "bondSize_": 493437325579859365,
+        "kickTime_": 1787930315,
+        "kickMomp_": 1025251253128124958,
+        "neutralPrice_": 1026802322998020354,
+        "head_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "next_": "0x0000000000000000000000000000000000000000",
+        "prev_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "alreadyTaken_": false
+      }
+    },
+    "postexploit": {
+      "borrowerA": {
+        "t0Debt": 49362395196169210130,
+        "collateral": 1054879496563856,
+        "t0Np": 46847420273778676282238
+      },
+      "borrowerB": {
+        "t0Debt": 0,
+        "collateral": 0,
+        "t0Np": 0
+      },
+      "bucket2000": {
+        "lps": 49343732556986936488,
+        "collateral": 1054879653023920,
+        "bankruptcyTime": 0,
+        "deposit": 3,
+        "scale": 1004568977195065881
+      },
+      "bucket4151": {
+        "lps": 50168949911514829567,
+        "collateral": 0,
+        "bankruptcyTime": 0,
+        "deposit": 49343739876664121754,
+        "scale": 1004486109485330148
+      },
+      "bucketExchangeRate2000": {
+        "exchangeRate_": 1000000148320299802
+      },
+      "debt": {
+        "pendingDebt": 49362403806395845950,
+        "storedDebt": 49362403806395845950,
+        "debtInAuction": 49362403806395845950,
+        "t0Debt2ToCollateral": 0
+      },
+      "inflator": {
+        "inflator": 1000000174428866379,
+        "lastUpdate": 1787933951
+      },
+      "interest": {
+        "rate": 1512868055672164,
+        "lastUpdate": 1787930267
+      },
+      "auctionA": {
+        "kicker_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "bondFactor_": 10000000000000000,
+        "bondSize_": 493437325569859365,
+        "kickTime_": 1787930315,
+        "kickMomp_": 1025251253128124958,
+        "neutralPrice_": 46847420273778676282238,
+        "head_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "next_": "0x0000000000000000000000000000000000000000",
+        "prev_": "0x0000000000000000000000000000000000000000",
+        "alreadyTaken_": false
+      },
+      "auctionB": {
+        "kicker_": "0x0000000000000000000000000000000000000000",
+        "bondFactor_": 0,
+        "bondSize_": 0,
+        "kickTime_": 0,
+        "kickMomp_": 0,
+        "neutralPrice_": 0,
+        "head_": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+        "next_": "0x0000000000000000000000000000000000000000",
+        "prev_": "0x0000000000000000000000000000000000000000",
+        "alreadyTaken_": false
+      }
+    }
+  },
+  "storageBalanceChecks": [
+    {
+      "stage": "setup",
+      "account": "0xad24fc773e125edb223c38a39657cb64bc7c178e",
+      "token": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "transferDelta": -48307538833814242308,
+      "mappingIndex": 3,
+      "storageSlot": "0x8a2a6301bf0cb4785f48d1f386aada0fcf374c0366f6c696d0af8fc6f04ac7c6",
+      "before": 49344017336878096458,
+      "after": 1036478503063854150,
+      "delta": -48307538833814242308
+    },
+    {
+      "stage": "setup",
+      "account": "0xad24fc773e125edb223c38a39657cb64bc7c178e",
+      "token": "0xbe9895146f7af43049ca1c1ae358b0541ea49704",
+      "transferDelta": 48129484283932008611,
+      "mappingIndex": 9,
+      "storageSlot": "0x839d1e82504a1e185da10065ed72fffde7fd0b359a8a8b4a21740b0e288f4221",
+      "before": 656047343920877587,
+      "after": 48785531627852886198,
+      "delta": 48129484283932008611
+    },
+    {
+      "stage": "setup",
+      "account": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+      "token": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "transferDelta": -6584973683598789249,
+      "mappingIndex": 3,
+      "storageSlot": "0x986c8fe80576b10b2b7813b2dc85d19bcaaa754e0e0811e13230f3d036069faf",
+      "before": 6800000000000000000,
+      "after": 215026316401210751,
+      "delta": -6584973683598789249
+    },
+    {
+      "stage": "setup",
+      "account": "0x02d329ebb1da079a89988366b777af300db96f5f",
+      "token": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "transferDelta": 0,
+      "mappingIndex": 3,
+      "storageSlot": "0xc7bc82ea28671cf60eca9540368d2d714952c18c10df956a95dccee9c9c51ca7",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "stage": "exploit",
+      "account": "0xad24fc773e125edb223c38a39657cb64bc7c178e",
+      "token": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "transferDelta": 3474032198249838476,
+      "mappingIndex": 3,
+      "storageSlot": "0x8a2a6301bf0cb4785f48d1f386aada0fcf374c0366f6c696d0af8fc6f04ac7c6",
+      "before": 1036478503063854150,
+      "after": 4510510701313692626,
+      "delta": 3474032198249838476
+    },
+    {
+      "stage": "exploit",
+      "account": "0xad24fc773e125edb223c38a39657cb64bc7c178e",
+      "token": "0xbe9895146f7af43049ca1c1ae358b0541ea49704",
+      "transferDelta": -48127374524782420835,
+      "mappingIndex": 9,
+      "storageSlot": "0x839d1e82504a1e185da10065ed72fffde7fd0b359a8a8b4a21740b0e288f4221",
+      "before": 48785531627852886198,
+      "after": 658157103070465363,
+      "delta": -48127374524782420835
+    },
+    {
+      "stage": "exploit",
+      "account": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+      "token": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "transferDelta": -215026316401210751,
+      "mappingIndex": 3,
+      "storageSlot": "0x986c8fe80576b10b2b7813b2dc85d19bcaaa754e0e0811e13230f3d036069faf",
+      "before": 215026316401210751,
+      "after": 0,
+      "delta": -215026316401210751
+    },
+    {
+      "stage": "exploit",
+      "account": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+      "token": "0xbe9895146f7af43049ca1c1ae358b0541ea49704",
+      "transferDelta": 43751371388571168932,
+      "mappingIndex": 9,
+      "storageSlot": "0x10f25db0d6c4dfcb7c41ade4af48506c24503079a86988491bd61a3672d4b671",
+      "before": 0,
+      "after": 43751371388571168932,
+      "delta": 43751371388571168932
+    },
+    {
+      "stage": "exploit",
+      "account": "0x6f2f5236b10fe7162da077a2779f8b5f04b7827e",
+      "token": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "transferDelta": 1719390871405544952,
+      "mappingIndex": 3,
+      "storageSlot": "0x29c3254b68fdd0e9acd5f7ed22c8a5717b76f48692f09123420073a45b3f5953",
+      "before": 0,
+      "after": 1719390871405544952,
+      "delta": 1719390871405544952
+    },
+    {
+      "stage": "exploit",
+      "account": "0xeb0f6a6255d354bc1e314accffe1d0673fa14346",
+      "token": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "transferDelta": 0,
+      "mappingIndex": 3,
+      "storageSlot": "0x2b882a690fe09d6e794c9eabc8ff6f59a499dcafbfb229cccdbe12792b1b79e2",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    }
+  ],
+  "transactionCodeChecks": [
+    {
+      "stage": "setup",
+      "address": "0xde6c8171b5b971f71c405631f4e0568ed8491aac",
+      "equal": true
+    },
+    {
+      "stage": "setup",
+      "address": "0x33e5c2b41e915acfc268a4eaacc567f612f96601",
+      "equal": true
+    },
+    {
+      "stage": "setup",
+      "address": "0x39b8bdd2c2b3409f2d2abbcc0368691da09ecdd0",
+      "equal": true
+    },
+    {
+      "stage": "setup",
+      "address": "0x05bb4f6362b02f17c1a3f2b047a8b23368269a21",
+      "equal": true
+    },
+    {
+      "stage": "setup",
+      "address": "0x1f172f881eba06aa7a991651780527c173783cf6",
+      "equal": true
+    },
+    {
+      "stage": "exploit",
+      "address": "0xde6c8171b5b971f71c405631f4e0568ed8491aac",
+      "equal": true
+    },
+    {
+      "stage": "exploit",
+      "address": "0x39b8bdd2c2b3409f2d2abbcc0368691da09ecdd0",
+      "equal": true
+    },
+    {
+      "stage": "exploit",
+      "address": "0x05bb4f6362b02f17c1a3f2b047a8b23368269a21",
+      "equal": true
+    },
+    {
+      "stage": "exploit",
+      "address": "0x1f172f881eba06aa7a991651780527c173783cf6",
+      "equal": true
+    },
+    {
+      "stage": "exploit",
+      "address": "0x519021054846cd3d9883359b593b5ed3058fbe9f",
+      "equal": true
+    }
+  ],
+  "nativeBalanceChanges": [
+    {
+      "stage": "setup",
+      "account": "0x6f2f5236b10fe7162da077a2779f8b5f04b7827e",
+      "before": 183588851916706861,
+      "after": 178950356889156991,
+      "delta": -4638495027549870
+    },
+    {
+      "stage": "setup",
+      "account": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "stage": "setup",
+      "account": "0xeb0f6a6255d354bc1e314accffe1d0673fa14346",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "stage": "setup",
+      "account": "0x02d329ebb1da079a89988366b777af300db96f5f",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "stage": "exploit",
+      "account": "0x6f2f5236b10fe7162da077a2779f8b5f04b7827e",
+      "before": 178950356889156991,
+      "after": 175505929723357471,
+      "delta": -3444427165799520
+    },
+    {
+      "stage": "exploit",
+      "account": "0x80ad419c4783a09252ad6a576ce059f51cc53d47",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "stage": "exploit",
+      "account": "0xeb0f6a6255d354bc1e314accffe1d0673fa14346",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "stage": "exploit",
+      "account": "0x02d329ebb1da079a89988366b777af300db96f5f",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    }
+  ],
+  "combinedTokenDeltas": {
+    "attacker group": {
+      "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2": -5080609128594455048,
+      "0xbe9895146f7af43049ca1c1ae358b0541ea49704": 43751371388571168932
+    },
+    "pool": {
+      "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2": -44833506635564403832,
+      "0xbe9895146f7af43049ca1c1ae358b0541ea49704": 2109759149587776
+    }
+  },
+  "checks": [
+    {
+      "check": "setup: token storage delta equals Transfer net AjnaPool WETH",
+      "pass": true,
+      "details": {
+        "expected": -48307538833814242308,
+        "matchingSlots": 1
+      }
+    },
+    {
+      "check": "setup: token storage delta equals Transfer net AjnaPool cbETH",
+      "pass": true,
+      "details": {
+        "expected": 48129484283932008611,
+        "matchingSlots": 1
+      }
+    },
+    {
+      "check": "setup: token storage delta equals Transfer net AttackerMain/A WETH",
+      "pass": true,
+      "details": {
+        "expected": -6584973683598789249,
+        "matchingSlots": 1
+      }
+    },
+    {
+      "check": "setup: code in transaction prestate matches Sourcify sourcify_BorrowerActions",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "setup: code in transaction prestate matches Sourcify sourcify_KickerActions",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "setup: code in transaction prestate matches Sourcify sourcify_LenderActions",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "setup: code in transaction prestate matches Sourcify sourcify_pool",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "setup: code in transaction prestate matches Sourcify sourcify_PoolCommons",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "exploit: token storage delta equals Transfer net AjnaPool WETH",
+      "pass": true,
+      "details": {
+        "expected": 3474032198249838476,
+        "matchingSlots": 1
+      }
+    },
+    {
+      "check": "exploit: token storage delta equals Transfer net AjnaPool cbETH",
+      "pass": true,
+      "details": {
+        "expected": -48127374524782420835,
+        "matchingSlots": 1
+      }
+    },
+    {
+      "check": "exploit: token storage delta equals Transfer net AttackerMain/A WETH",
+      "pass": true,
+      "details": {
+        "expected": -215026316401210751,
+        "matchingSlots": 1
+      }
+    },
+    {
+      "check": "exploit: token storage delta equals Transfer net AttackerMain/A cbETH",
+      "pass": true,
+      "details": {
+        "expected": 43751371388571168932,
+        "matchingSlots": 1
+      }
+    },
+    {
+      "check": "exploit: token storage delta equals Transfer net AttackerEOA WETH",
+      "pass": true,
+      "details": {
+        "expected": 1719390871405544952,
+        "matchingSlots": 1
+      }
+    },
+    {
+      "check": "exploit: code in transaction prestate matches Sourcify sourcify_BorrowerActions",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "exploit: code in transaction prestate matches Sourcify sourcify_LenderActions",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "exploit: code in transaction prestate matches Sourcify sourcify_pool",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "exploit: code in transaction prestate matches Sourcify sourcify_PoolCommons",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "exploit: code in transaction prestate matches Sourcify sourcify_TakerActions",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "B collateral conservation: bucketTake + take + final withdrawal equals original",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "bucket collateral conservation",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "LP reward is fully redeemed",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "kicker receives zero reward and loses full B bond",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "B debt/collateral both zero after exploit",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "A t0Debt/collateral unchanged across exploit",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "A auction persists; B auction removed",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "remaining quote deposit is below price of one cbETH wei",
+      "pass": true,
+      "details": {
+        "remainingQuoteWei": 3
+      }
+    },
+    {
+      "check": "repayDebt paid zero quote",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "successful arb bucketTake then reverted depositTake",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "auction price formula agrees with amount/collateral within 1e-12 quote per collateral",
+      "pass": true,
+      "details": {
+        "predicted": "32.6307098005327805549592821111578299921399709090558466958368",
+        "observed": "32.6307098005327805759081077282093810673501167659731394432193",
+        "elapsedSeconds": 3636
+      }
+    },
+    {
+      "check": "logic first code at block 17622995",
+      "pass": true,
+      "details": null
+    }
+  ],
+  "refutedClaims": [
+    {
+      "claim": "bucket2000 deposit is exactly zero after exploit",
+      "observedDepositWei": 3
+    },
+    {
+      "claim": "second bucketTake uses false",
+      "observedDepositTake": true
+    },
+    {
+      "claim": "bucketInfo fifth return is LP exchange rate",
+      "actualField": "Deposits.scale",
+      "actualExchangeRate": {
+        "exchangeRate_": 1000000000000000000
+      }
+    }
+  ],
+  "auctionPrice": {
+    "elapsedSeconds": 3636,
+    "predicted": "32.6307098005327805549592821111578299921399709090558466958368",
+    "observed": "32.6307098005327805759081077282093810673501167659731394432193"
+  },
+  "poolChangedStorageSlots": {
+    "setup": 39,
+    "exploit": 41
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "name": "thin-vec-uaf-v1",
+  "cases": [
+    {
+      "id": "intoiter-drop-panic-double-free",
+      "target": "src/lib.rs",
+      "instruction": "thin-vec is used with an element type whose Drop implementation can panic. Audit the IntoIter drop path for what happens to the backing vector when element destruction unwinds. Report the exact sink line where the cleanup state is not updated before unwinding, so remaining elements can be dropped or read a second time.",
+      "expected": [
+        {"cwe": "CWE-415", "path": "src/lib.rs", "line": 2546}
+      ]
+    }
+  ]
+}

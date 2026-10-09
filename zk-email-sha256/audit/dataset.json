@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "name": "zk-email-sha256-constraint-v1",
+  "cases": [
+    {
+      "id": "sha256-length-comparator-unconstrained",
+      "target": "sha.circom",
+      "instruction": "This is the standalone SHA256 circom template, not the full EmailVerifier. The prover controls paddedInLength and, through it, the array index used to select the final compression output. Audit the template's comparators for soundness under a malicious witness. Report the exact sink line where a value is fed to a bit-width-sensitive comparator without being constrained to that width, so the prover can drive the selector out of range and obtain an all-zero hash. The full EmailVerifier adds constraints that make the end-to-end attack infeasible; do not claim that the email verification scheme is broken.",
+      "expected": [
+        {"cwe": "CWE-1284", "path": "sha.circom", "line": 126}
+      ]
+    }
+  ]
+}

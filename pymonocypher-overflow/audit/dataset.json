@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "name": "pymonocypher-argon2i-overflow-v1",
+  "cases": [
+    {
+      "id": "argon2i32-small-block-count",
+      "target": "c_monocypher.pyx",
+      "instruction": "pymonocypher exposes Monocypher's argon2i_32 through a Cython wrapper. The Python caller controls the number of argon2 blocks. Audit the boundary between the wrapper and the C implementation for a caller-controlled quantity that determines the work-area size. Report the exact allocation sink line and explain how the allocated work area can be smaller than what the underlying C routine writes.",
+      "expected": [
+        {"cwe": "CWE-122", "path": "c_monocypher.pyx", "line": 345}
+      ]
+    }
+  ]
+}
