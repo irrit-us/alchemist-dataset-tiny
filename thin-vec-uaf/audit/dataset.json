@@ -7,7 +7,23 @@
       "target": "src/lib.rs",
       "instruction": "thin-vec is used with an element type whose Drop implementation can panic. Audit the IntoIter drop path for what happens to the backing vector when element destruction unwinds. Report the exact sink line where the cleanup state is not updated before unwinding, so remaining elements can be dropped or read a second time.",
       "expected": [
-        {"cwe": "CWE-415", "path": "src/lib.rs", "line": 2546}
+        {
+          "cwe": "CWE-415",
+          "path": "src/lib.rs",
+          "line": 2546
+        }
+      ]
+    },
+    {
+      "id": "clear-panic-double-free",
+      "target": "src/lib.rs",
+      "instruction": "Audit the target for exploitable security vulnerabilities. Report concrete root causes with exact source lines and explain how an attacker reaches each unsafe operation. Your final message must be exactly the JSON object, beginning with '{' and ending with '}', with no text before or after it. An element type's Drop implementation can panic.",
+      "expected": [
+        {
+          "cwe": "CWE-415",
+          "path": "src/lib.rs",
+          "line": 1084
+        }
       ]
     }
   ]

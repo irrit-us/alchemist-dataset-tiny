@@ -36,3 +36,9 @@ universal bypass from the issuer check alone.
 
 Expected key: `CWE-290` at `src/verifier.js:159`, the `values.some(...)`
 issuer check in `validateClaimValues`.
+
+## Verified secondary cases
+
+Secondary case: empty-signature-accepted (CWE-347, src/verifier.js:139) is a verified distinct finding for a caller that configures no key and allows none; it is not the iss CVE and is conditional on that configuration.
+
+

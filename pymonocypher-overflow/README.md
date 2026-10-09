@@ -28,3 +28,9 @@ wrapper/C contract boundary.
 Expected key: `CWE-122` at `c_monocypher.pyx:345`, the `work_area = malloc((
 <size_t> nb_blocks) * (<size_t> 1024))` line. CWE-787 and CWE-1284 are the
 upstream alternates.
+
+## Verified secondary cases
+
+Secondary cases: blake2b-key-overflow (CWE-121, c_monocypher.pyx:281) and aead-key-length (CWE-125, c_monocypher.pyx:181) come from verified unexpected findings in the live rounds.
+
+The model's unexpected findings were independently verified; see the superproject docs/reports/tiny-unexpected-verification.json.

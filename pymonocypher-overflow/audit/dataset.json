@@ -7,7 +7,35 @@
       "target": "c_monocypher.pyx",
       "instruction": "pymonocypher exposes Monocypher's argon2i_32 through a Cython wrapper. The Python caller controls the number of argon2 blocks. Audit the boundary between the wrapper and the C implementation for a caller-controlled quantity that determines the work-area size. Report the exact allocation sink line and explain how the allocated work area can be smaller than what the underlying C routine writes.",
       "expected": [
-        {"cwe": "CWE-122", "path": "c_monocypher.pyx", "line": 345}
+        {
+          "cwe": "CWE-122",
+          "path": "c_monocypher.pyx",
+          "line": 345
+        }
+      ]
+    },
+    {
+      "id": "blake2b-key-overflow",
+      "target": "c_monocypher.pyx",
+      "instruction": "Audit the target for exploitable security vulnerabilities. Report concrete root causes with exact source lines and explain how an attacker reaches each unsafe operation. Your final message must be exactly the JSON object, beginning with '{' and ending with '}', with no text before or after it. The Python caller controls the key length.",
+      "expected": [
+        {
+          "cwe": "CWE-121",
+          "path": "c_monocypher.pyx",
+          "line": 281
+        }
+      ]
+    },
+    {
+      "id": "aead-key-length",
+      "target": "c_monocypher.pyx",
+      "instruction": "Audit the target for exploitable security vulnerabilities. Report concrete root causes with exact source lines and explain how an attacker reaches each unsafe operation. Your final message must be exactly the JSON object, beginning with '{' and ending with '}', with no text before or after it. The Python caller controls the key and nonce buffers.",
+      "expected": [
+        {
+          "cwe": "CWE-125",
+          "path": "c_monocypher.pyx",
+          "line": 181
+        }
       ]
     }
   ]

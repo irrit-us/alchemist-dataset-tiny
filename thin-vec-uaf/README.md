@@ -27,3 +27,9 @@ element type with a panicking `Drop`.
 Expected key: `CWE-415` at `src/lib.rs:2546`, the `mem::replace(&mut this.vec,
 ThinVec::new())` line in `IntoIter::drop::drop_non_singleton`. CWE-416 is the
 upstream alternate.
+
+## Verified secondary cases
+
+Secondary case: clear-panic-double-free (CWE-415, src/lib.rs:1084) is the ThinVec::clear variant of the same unwind double-drop, verified from the live rounds.
+
+

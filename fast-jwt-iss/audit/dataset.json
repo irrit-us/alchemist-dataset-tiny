@@ -7,7 +7,23 @@
       "target": "src/verifier.js",
       "instruction": "fast-jwt is configured as createVerifier({ key: keyFetcher, allowedIss: 'https://valid-iss' }), where keyFetcher resolves a JWKS key using jwt.payload.iss as the domain (for example get-jwks with providerDiscovery). Audit how the issuer claim is validated when the token supplies iss as an array of strings. Report the exact validation sink line. Keep the dynamic key-fetch call context in the analysis: accepting an unexpected issuer is only exploitable because the key fetch trusts that same claim, so do not present it as a universal authentication bypass on its own.",
       "expected": [
-        {"cwe": "CWE-290", "path": "src/verifier.js", "line": 159}
+        {
+          "cwe": "CWE-290",
+          "path": "src/verifier.js",
+          "line": 159
+        }
+      ]
+    },
+    {
+      "id": "empty-signature-accepted",
+      "target": "src/verifier.js",
+      "instruction": "Audit the target for exploitable security vulnerabilities. Report concrete root causes with exact source lines and explain how an attacker reaches each unsafe operation. Your final message must be exactly the JSON object, beginning with '{' and ending with '}', with no text before or after it. createVerifier is configured with no key and allows the 'none' algorithm.",
+      "expected": [
+        {
+          "cwe": "CWE-347",
+          "path": "src/verifier.js",
+          "line": 139
+        }
       ]
     }
   ]
