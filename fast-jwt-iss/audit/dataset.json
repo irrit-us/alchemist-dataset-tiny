@@ -15,14 +15,44 @@
       ]
     },
     {
-      "id": "empty-signature-accepted",
+      "id": "unsigned-opt-in-control",
       "target": "src/verifier.js",
-      "instruction": "Audit the target for exploitable security vulnerabilities. Report concrete root causes with exact source lines and explain how an attacker reaches each unsafe operation. Your final message must be exactly the JSON object, beginning with '{' and ending with '}', with no text before or after it. createVerifier is configured with no key and allows the 'none' algorithm.",
+      "instruction": "Review only signature enforcement with cache disabled, key:null and algorithms:['none']. Unsigned JWTs are explicitly intended by the caller. Do not treat that opt-in as a security violation; report only a demonstrated violation of this policy.",
+      "expected": []
+    },
+    {
+      "id": "empty-hs256-null-key",
+      "target": "src/verifier.js",
+      "instruction": "Review signature enforcement when createVerifier is configured with key:null, algorithms:['HS256'], and cache disabled. The caller intends to accept only HS256 authenticated tokens; the attacker controls token bytes. Determine whether missing key material fails closed.",
       "expected": [
         {
           "cwe": "CWE-347",
           "path": "src/verifier.js",
           "line": 139
+        }
+      ]
+    },
+    {
+      "id": "cache-expiry-without-iat",
+      "target": "src/verifier.js",
+      "instruction": "The service verifies HS256 tokens with a real secret key and cache:true. Signed tokens include exp but need not include iat. An attacker may replay a previously issued token. Audit whether token expiry remains enforced after caching.",
+      "expected": [
+        {
+          "cwe": "CWE-613",
+          "path": "src/verifier.js",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "id": "cache-max-age-with-exp",
+      "target": "src/verifier.js",
+      "instruction": "The service verifies HS256 tokens with a real secret key, cache:true, and maxAge:1000 milliseconds. Signed tokens contain numeric iat and a later exp. An attacker may replay an issued token after maxAge. Audit whether caching preserves both lifetime limits.",
+      "expected": [
+        {
+          "cwe": "CWE-613",
+          "path": "src/verifier.js",
+          "line": 98
         }
       ]
     }

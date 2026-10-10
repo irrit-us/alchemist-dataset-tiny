@@ -37,6 +37,42 @@
           "line": 181
         }
       ]
+    },
+    {
+      "id": "chacha20-short-key",
+      "target": "c_monocypher.pyx",
+      "instruction": "Audit the chacha20 wrapper when the Python caller controls the key byte buffer and supplies a valid 8-byte nonce. Trace the buffer to the native operation and check its read bounds.",
+      "expected": [
+        {
+          "cwe": "CWE-125",
+          "path": "c_monocypher.pyx",
+          "line": 267
+        }
+      ]
+    },
+    {
+      "id": "signature-check-short-buffers",
+      "target": "c_monocypher.pyx",
+      "instruction": "Audit signature_check when the Python caller controls the signature and public-key byte buffers. Determine whether the native verification routine can read beyond these buffers.",
+      "expected": [
+        {
+          "cwe": "CWE-125",
+          "path": "c_monocypher.pyx",
+          "line": 429
+        }
+      ]
+    },
+    {
+      "id": "argon2-null-allocation",
+      "target": "c_monocypher.pyx",
+      "instruction": "Audit allocation-failure handling in argon2i_32. A Python caller controls nb_blocks and can trigger a failed large allocation. Distinguish the resulting NULL-pointer availability failure from a too-small successful allocation.",
+      "expected": [
+        {
+          "cwe": "CWE-476",
+          "path": "c_monocypher.pyx",
+          "line": 345
+        }
+      ]
     }
   ]
 }

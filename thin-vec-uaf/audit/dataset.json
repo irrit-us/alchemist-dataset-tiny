@@ -25,6 +25,18 @@
           "line": 1084
         }
       ]
+    },
+    {
+      "id": "layout-rounded-size-overflow-low-impact",
+      "target": "src/lib.rs",
+      "instruction": "Include low-impact correctness and unsafe-contract violations. Audit allocation layout validation when a caller requests a capacity near isize::MAX. Distinguish raw-size overflow checks from rounded-size Layout requirements; do not claim practical remote exploitation.",
+      "expected": [
+        {
+          "cwe": "CWE-190",
+          "path": "src/lib.rs",
+          "line": 441
+        }
+      ]
     }
   ]
 }
