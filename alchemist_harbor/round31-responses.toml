@@ -1,0 +1,13 @@
+schema_version = 1
+
+[cli]
+max_tokens = 32768
+max_stream_bytes = 33554432
+max_tool_calls = 32
+max_settlement_calls = 2
+max_output_repairs = 2
+max_context_bytes = 2097152
+max_tool_output_bytes = 32768
+max_attempts = 3
+trace_dir = "/logs/agent/traces"
+format = "quiet"
