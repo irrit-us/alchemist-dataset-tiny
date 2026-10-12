@@ -95,7 +95,6 @@ class HarborSuiteTests(unittest.TestCase):
             trace_dir.mkdir()
             (trace_dir / "audit.jsonl").write_text("\n".join(json.dumps({"event": event}) for event in (
                 {"type": "operation", "name": "stream_end", "details": {"bytes": 123}},
-                {"type": "operation", "name": "empty_completion_thinking_disabled", "details": {}},
                 {"type": "operation", "name": "run_end", "details": {
                     "empty_completions": 2, "output_repairs": 1, "tool_errors": 0,
                     "tools": 4, "turns": 5, "usage": {
@@ -106,7 +105,6 @@ class HarborSuiteTests(unittest.TestCase):
             )) + "\n")
             traced = summarize(tasks, [job])
             self.assertEqual(traced["totals"]["trace"]["empty_completions"], 2)
-            self.assertEqual(traced["totals"]["trace"]["thinking_fallbacks"], 1)
             self.assertEqual(traced["totals"]["trace"]["max_completed_stream_bytes"], 123)
             self.assertEqual(traced["totals"]["trace"]["usage"]["total_tokens"], 120)
             (job / "clean" / "agent" / "alchemist-manifest.json").write_text('{"binary_sha256":"changed"}')

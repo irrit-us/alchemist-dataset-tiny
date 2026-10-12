@@ -65,14 +65,11 @@ def _trace_metrics(trial: Path) -> dict | None:
         raise ValueError(f"expected one operational trace in {trial}")
     run_end = None
     stream_bytes = []
-    thinking_fallbacks = 0
     for line in traces[0].read_text(encoding="utf-8").splitlines():
         record = json.loads(line)
         event = record["event"]
         if event.get("type") == "operation" and event.get("name") == "stream_end":
             stream_bytes.append(event["details"]["bytes"])
-        elif event.get("type") == "operation" and event.get("name") == "empty_completion_thinking_disabled":
-            thinking_fallbacks += 1
         elif event.get("type") == "operation" and event.get("name") == "run_end":
             run_end = event["details"]
     if run_end is None:
@@ -81,7 +78,6 @@ def _trace_metrics(trial: Path) -> dict | None:
     metrics = {field: run_end[field] for field in fields}
     metrics["usage"] = run_end["usage"]
     metrics["max_completed_stream_bytes"] = max(stream_bytes, default=0)
-    metrics["thinking_fallbacks"] = thinking_fallbacks
     return metrics
 
 
@@ -116,7 +112,7 @@ def _totals(rows: list[dict]) -> dict:
         "trace": {
             "trials": len(traces),
             **{field: sum(trace[field] for trace in traces)
-               for field in ("empty_completions", "output_repairs", "tool_errors", "tools", "turns", "thinking_fallbacks")},
+               for field in ("empty_completions", "output_repairs", "tool_errors", "tools", "turns")},
             "usage": {field: sum(trace["usage"][field] for trace in traces)
                       for field in usage_fields},
             "max_completed_stream_bytes": max((trace["max_completed_stream_bytes"] for trace in traces), default=0),
