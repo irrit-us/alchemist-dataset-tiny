@@ -50,7 +50,39 @@ def _failure_class(report: dict | None) -> str | None:
         return "empty_model_completion"
     if "finish_reason length" in error:
         return "response_length"
+    if "model stream exceeds" in error:
+        return "stream_byte_limit"
+    if "finding must cite a source line" in error:
+        return "evidence_validation"
     return str(report.get("outcome") or "invalid_report")
+
+
+def _trace_metrics(trial: Path) -> dict | None:
+    traces = sorted((trial / "agent" / "traces").glob("*.jsonl"))
+    if not traces:
+        return None
+    if len(traces) != 1:
+        raise ValueError(f"expected one operational trace in {trial}")
+    run_end = None
+    stream_bytes = []
+    thinking_fallbacks = 0
+    for line in traces[0].read_text(encoding="utf-8").splitlines():
+        record = json.loads(line)
+        event = record["event"]
+        if event.get("type") == "operation" and event.get("name") == "stream_end":
+            stream_bytes.append(event["details"]["bytes"])
+        elif event.get("type") == "operation" and event.get("name") == "empty_completion_thinking_disabled":
+            thinking_fallbacks += 1
+        elif event.get("type") == "operation" and event.get("name") == "run_end":
+            run_end = event["details"]
+    if run_end is None:
+        raise ValueError(f"operational trace has no run_end in {trial}")
+    fields = ("empty_completions", "output_repairs", "tool_errors", "tools", "turns")
+    metrics = {field: run_end[field] for field in fields}
+    metrics["usage"] = run_end["usage"]
+    metrics["max_completed_stream_bytes"] = max(stream_bytes, default=0)
+    metrics["thinking_fallbacks"] = thinking_fallbacks
+    return metrics
 
 
 def _totals(rows: list[dict]) -> dict:
@@ -70,6 +102,8 @@ def _totals(rows: list[dict]) -> dict:
         if row["completed"] and row["elapsed_ms"] is not None
     ]
     failures = Counter(row["failure_class"] for row in rows if row["failure_class"] is not None)
+    traces = [row["trace"] for row in rows if row["trace"] is not None]
+    usage_fields = ("prompt_tokens", "completion_tokens", "reasoning_tokens", "total_tokens")
     return {
         "trials": len(rows),
         "completed": sum(row["completed"] for row in rows),
@@ -79,6 +113,14 @@ def _totals(rows: list[dict]) -> dict:
         "outcomes": dict(sorted(Counter(row["outcome"] for row in rows).items())),
         "failure_classes": dict(sorted(failures.items())),
         "median_completed_elapsed_ms": median(latencies) if latencies else None,
+        "trace": {
+            "trials": len(traces),
+            **{field: sum(trace[field] for trace in traces)
+               for field in ("empty_completions", "output_repairs", "tool_errors", "tools", "turns", "thinking_fallbacks")},
+            "usage": {field: sum(trace["usage"][field] for trace in traces)
+                      for field in usage_fields},
+            "max_completed_stream_bytes": max((trace["max_completed_stream_bytes"] for trace in traces), default=0),
+        },
         "exact": exact,
         "line": line,
     }
@@ -167,6 +209,7 @@ def summarize(tasks: Path, jobs: list[Path]) -> dict:
                 "outcome": report.get("outcome", "invalid_report") if isinstance(report, dict) else "missing_report",
                 "failure_class": _failure_class(report),
                 "elapsed_ms": elapsed,
+                "trace": _trace_metrics(trial),
                 "expected_keys": _display_keys(expected),
                 "reported_keys": _display_keys(found),
                 "exact": _score(expected, found),
