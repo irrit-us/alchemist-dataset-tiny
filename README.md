@@ -58,7 +58,9 @@ python -m alchemist_harbor.summarize --tasks harbor-tasks \
 ```
 
 The summary treats failed runs as misses and checks each verifier reward against
-the report and exported labels. It reads labels only after trials finish.
+the report and exported labels. It reads labels only after trials finish. When
+ordinary agent traces are present, it also totals empty completions, output
+repairs, tool errors, token usage, and the largest completed stream response.
 [`alchemist_harbor/round30-long-output.toml`](alchemist_harbor/round30-long-output.toml)
 records the larger output cap used in the first live Harbor round; the CLI
 deadline and Harbor timeout multiplier were supplied explicitly for that round.
@@ -84,7 +86,7 @@ The task-specific instructions are preserved to retain their scope. Some are
 strongly leading, so this suite is public regression/tuning data rather than a
 held-out estimate of general vulnerability discovery. Harbor's Docker boundary
 keeps `tests/`, `solution/`, and `reference/` out of the agent workspace. A
-A provider credential forwarded from the Harbor process is available to the
+provider credential forwarded from the Harbor process is available to the
 agent process inside its task container.
 
 ## Source layout
