@@ -1,0 +1,4 @@
+/harbor-tasks/
+/harbor-jobs/
+__pycache__/
+*.pyc

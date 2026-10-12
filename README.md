@@ -1,9 +1,12 @@
-# alchemist-dataset-tiny
+# Audit Alchemist Harbor suite
 
-Small, real-world audit fixtures for the
-[Audit Alchemist](../../) harness. Each dataset is self-contained and keeps the
-audited code under `audit/` and the fix/evidence under `reference/`, so the
-solution stays out of the evaluation workspace.
+Real-world audit fixtures for [Audit Alchemist](../../), exported as standard
+tasks for the [Harbor framework](https://github.com/harbor-framework/harbor).
+Each fixture keeps
+audited code under `audit/` and fix/evidence under `reference/`. The exporter
+creates one Harbor task per case. Its Docker context contains only audited code;
+labels and oracle reports are placed under Harbor's delayed `tests/` and
+`solution/` directories.
 
 | Dataset | Class | Upstream | Vulnerable → fixed |
 | --- | --- | --- | --- |
@@ -15,21 +18,73 @@ solution stays out of the evaluation workspace.
 | `h11-chunked-framing` | Protocol parsing (`CWE-444`) | python-hyper/h11, CVE-2025-43859 | 0.14.0 → 0.16.0 |
 | `zk-email-sha256` | ZK constraint soundness | zkemail/zk-email-verify, zkSecurity #02 | `f2fb77c` → `ad0ad6`/`e14e88`/`d667a1` |
 
-## Layout
+## Run with Harbor
+
+Use Python 3.12 or later, Docker, and Harbor 0.24.0. From this submodule:
+
+```sh
+python -m pip install -r requirements-harbor.txt
+python -m alchemist_harbor.export --output harbor-tasks
+python -m alchemist_harbor.build
+python -m alchemist_harbor.smoke
+export PYTHONPATH="$PWD"
+harbor run --path harbor-tasks \
+  --agent alchemist_harbor.agent:AlchemistAgent \
+  --model YOUR-MODEL \
+  --ak binary_path=../../target/harbor-build/x86_64-unknown-linux-gnu/release/alchemist \
+  --ak endpoint=https://YOUR-PROVIDER/v1/chat/completions \
+  --ae AUDIT_API_KEY="$AUDIT_API_KEY" \
+  --n-concurrent 1 --n-attempts 3 --jobs-dir harbor-jobs
+```
+
+`--model` is passed directly to `alchemist audit`. Use `--ak wire_api=responses`
+or `--ak wire_api=anthropic` for those provider endpoints. The adapter runs the
+current parent checkout's Linux binary inside each Harbor task container. It
+uploads [`alchemist_harbor/node.toml`](alchemist_harbor/node.toml) for explicit
+budgets and tool-loop settings; `--ak config_path=PATH` selects another complete
+standalone TOML file. In PowerShell, use
+`$env:PYTHONPATH = (Get-Location).Path` before `harbor run`.
+
+`--case CASE_ID` on the exporter selects individual cases. Use a new output
+directory for each export; it never overwrites an existing directory. Keep the
+exported task tree and job results for reproducible comparisons, and record
+the parent and submodule commits, model/settings, budgets, and repeated trials.
+Each trial logs the binary and TOML SHA-256 fingerprints in
+`alchemist-manifest.json`.
+The smoke command uses a prescribed local model response and checks only the
+end-to-end integration; it does not measure audit quality.
+
+Harbor's reward is 1 only when the CLI run succeeds and its unique
+`(CWE, path, line)` keys exactly equal that task's expected keys; clean controls
+require an empty report. Missing, malformed, timed-out, or extra findings score
+0. `details.json` under `/logs/verifier` records matched, missed, unexpected,
+duplicate, and outcome counts. Exact reward measures label detection, not
+exploit demonstration. The 18 existing cases include secondary issues and one
+safe control; the seven primary findings remain the headline capability set.
+
+The task-specific instructions are preserved to retain their scope. Some are
+strongly leading, so this suite is public regression/tuning data rather than a
+held-out estimate of general vulnerability discovery. Harbor's Docker boundary
+keeps `tests/`, `solution/`, and `reference/` out of the agent workspace. A
+provider credential passed with `--ae` is still available to the agent process.
+
+## Source layout
 
 ```
 <dataset>/
 ├── README.md          scope, boundaries, expected label
 ├── audit/
-│   ├── dataset.json   harness manifest (this is the dataset root)
+│   ├── dataset.json   case metadata used by the Harbor exporter
 │   └── ...            vulnerable source the agent may read
 └── reference/
     ├── FIX.md         fix diff and advisory/report notes
     └── ...            second parser, patched files, etc. (never staged)
 ```
 
-The dataset root is `audit/`, so the harness stages only the audited code and
-never copies `reference/` into the agent workspace.
+The exporter copies `audit/` into each task's Docker context while excluding
+`dataset.json`, build/dependency directories, and links. The old manifest format
+remains for historical Alchemist reports and compatibility with the built-in
+evaluator; Harbor is the standard path for new suite runs.
 
 ## Boundaries
 
