@@ -7,6 +7,7 @@ import tomllib
 import unittest
 
 from alchemist_harbor.export import export
+from alchemist_harbor.summarize import summarize
 from alchemist_harbor.verify import grade
 
 
@@ -55,6 +56,44 @@ class HarborSuiteTests(unittest.TestCase):
             self.assertEqual(grade(report, expected)[0], 1.0)
             report.write_text('{"outcome":"success","findings":[{"cwe":"CWE-78","path":"file.py","line":1}]}')
             self.assertEqual(grade(report, expected)[0], 0.0)
+
+    def test_summary_keeps_exact_line_and_clean_rewards_separate(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            tasks = root / "tasks"
+            tasks.mkdir()
+            job = root / "job"
+            job.mkdir()
+            (job / "result.json").write_text('{"n_total_trials": 2}')
+            for name, expected, findings, reward in (
+                ("vulnerable", [{"cwe": "CWE-59", "path": "file.py", "line": 3}],
+                 [{"cwe": "CWE-78", "path": "file.py", "line": 3}], 0.0),
+                ("clean", [], [], 1.0),
+            ):
+                task = tasks / name
+                (task / "tests").mkdir(parents=True)
+                (task / "task.toml").write_text(f'[task]\nname = "audit/{name}"\n')
+                (task / "tests" / "expected.json").write_text(json.dumps(expected))
+                trial = job / name
+                (trial / "agent").mkdir(parents=True)
+                (trial / "result.json").write_text(json.dumps({
+                    "task_name": f"audit/{name}", "exception_info": None,
+                    "task_checksum": f"checksum-{name}",
+                    "verifier_result": {"rewards": {"reward": reward}},
+                }))
+                (trial / "agent" / "report.json").write_text(json.dumps({
+                    "outcome": "success", "findings": findings,
+                }))
+                (trial / "agent" / "alchemist-manifest.json").write_text('{"binary_sha256":"same"}')
+            summary = summarize(tasks, [job])
+            totals = summary["totals"]
+            self.assertEqual(summary["missing_manifests"], 0)
+            self.assertEqual(totals["reward_mean"], 0.5)
+            self.assertEqual((totals["exact"]["tp"], totals["exact"]["fp"], totals["exact"]["fn"]), (0, 1, 1))
+            self.assertEqual((totals["line"]["tp"], totals["line"]["fp"], totals["line"]["fn"]), (1, 0, 0))
+            (job / "clean" / "agent" / "alchemist-manifest.json").write_text('{"binary_sha256":"changed"}')
+            with self.assertRaisesRegex(ValueError, "agent configuration changed"):
+                summarize(tasks, [job])
 
 
 if __name__ == "__main__":

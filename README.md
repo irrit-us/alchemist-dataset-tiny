@@ -33,17 +33,35 @@ harbor run --path harbor-tasks \
   --model YOUR-MODEL \
   --ak binary_path=../../target/harbor-build/x86_64-unknown-linux-gnu/release/alchemist \
   --ak endpoint=https://YOUR-PROVIDER/v1/chat/completions \
-  --ae AUDIT_API_KEY="$AUDIT_API_KEY" \
-  --n-concurrent 1 --n-attempts 3 --jobs-dir harbor-jobs
+  --n-concurrent 1 --jobs-dir "$PWD/harbor-jobs"
 ```
 
 `--model` is passed directly to `alchemist audit`. Use `--ak wire_api=responses`
 or `--ak wire_api=anthropic` for those provider endpoints. The adapter runs the
 current parent checkout's Linux binary inside each Harbor task container. It
-uploads [`alchemist_harbor/node.toml`](alchemist_harbor/node.toml) for explicit
-budgets and tool-loop settings; `--ak config_path=PATH` selects another complete
-standalone TOML file. In PowerShell, use
-`$env:PYTHONPATH = (Get-Location).Path` before `harbor run`.
+reads `AUDIT_API_KEY` from the Harbor process environment and forwards it only
+to the agent command. Avoid `--ae AUDIT_API_KEY=...` for local runs: Harbor saves
+agent environment values in its job config. `--n-attempts` retries a failed
+trial; run separate named jobs for independent repeats.
+The adapter uploads [`alchemist_harbor/node.toml`](alchemist_harbor/node.toml)
+for explicit budgets and tool-loop settings; `--ak config_path=PATH` selects
+another complete standalone TOML file. In PowerShell, use
+`$env:PYTHONPATH = (Get-Location).Path` and
+`$env:PYTHONIOENCODING = 'utf-8'` before `harbor run` and pass an absolute
+`--jobs-dir` path.
+
+After repeated jobs, summarize Harbor reward alongside exact and line metrics:
+
+```sh
+python -m alchemist_harbor.summarize --tasks harbor-tasks \
+  --job harbor-jobs/round1 --job harbor-jobs/round2
+```
+
+The summary treats failed runs as misses and checks each verifier reward against
+the report and exported labels. It reads labels only after trials finish.
+[`alchemist_harbor/round30-long-output.toml`](alchemist_harbor/round30-long-output.toml)
+records the larger output cap used in the first live Harbor round; the CLI
+deadline and Harbor timeout multiplier were supplied explicitly for that round.
 
 `--case CASE_ID` on the exporter selects individual cases. Use a new output
 directory for each export; it never overwrites an existing directory. Keep the
@@ -66,7 +84,8 @@ The task-specific instructions are preserved to retain their scope. Some are
 strongly leading, so this suite is public regression/tuning data rather than a
 held-out estimate of general vulnerability discovery. Harbor's Docker boundary
 keeps `tests/`, `solution/`, and `reference/` out of the agent workspace. A
-provider credential passed with `--ae` is still available to the agent process.
+A provider credential forwarded from the Harbor process is available to the
+agent process inside its task container.
 
 ## Source layout
 
