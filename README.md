@@ -60,8 +60,7 @@ python -m alchemist_harbor.summarize --tasks harbor-tasks \
 The summary treats failed runs as misses and checks each verifier reward against
 the report and exported labels. It reads labels only after trials finish. When
 ordinary operational traces are present, it also totals empty completions,
-thinking fallbacks, repairs, tool errors, token usage, and the largest completed
-SSE response.
+repairs, tool errors, token usage, and the largest completed SSE response.
 [`alchemist_harbor/round30-long-output.toml`](alchemist_harbor/round30-long-output.toml)
 records the larger output cap used in the first live Harbor round; the CLI
 deadline and Harbor timeout multiplier were supplied explicitly for that round.
@@ -69,27 +68,12 @@ The round 31 [default trace](alchemist_harbor/round31-default-trace.toml),
 [default with a 32 MiB stream cap](alchemist_harbor/round31-default-32m-trace.toml),
 [low effort](alchemist_harbor/round31-low-effort.toml), and
 [low effort with a 32 MiB stream cap](alchemist_harbor/round31-low-effort-32m.toml)
-profiles preserve the controlled Ajna probes. For DeepSeek, the
-[empty-completion fallback](alchemist_harbor/round31-empty-fallback.toml)
-keeps the provider's default reasoning mode until two empty completions, then
-uses its documented non-thinking mode for the remaining turns. It also allows
-at most 32 MiB of streamed SSE per response. This is an opt-in provider-specific
-recovery setting; the Rust loop still enforces its attempt, tool, and time caps.
-The [non-thinking profile](alchemist_harbor/round31-nonthinking.toml) applies
-the same documented mode from the first request and is the separate round 31
-candidate for Ajna's final-turn length and empty-response failures.
+profiles preserve the controlled Ajna probes with thinking enabled.
 The [65,536-token profile](alchemist_harbor/round31-high64k.toml) keeps default
 thinking and the 32 MiB stream bound while allowing a larger final response;
 it is tested separately against the 32,768-token default-effort profile.
-The [65,536-token fallback profile](alchemist_harbor/round31-high64k-fallback.toml)
-adds only the bounded non-thinking recovery after repeated empty completions.
-The [Responses wire profile](alchemist_harbor/round31-responses.toml) records a
-single DeepSeek Responses API compatibility probe and requires
-`--ak wire_api=responses --ak endpoint=https://api.deepseek.com/responses`.
-The round 31 Harbor comparison retained default thinking: low and non-thinking
-profiles were faster but lost exact/line detection. The fallback fired in two
-targeted Ajna trials, with one completed report and one evidence-validation
-failure; it remains an explicit experiment rather than the suite default.
+The round 31 Harbor comparison retained default thinking: low effort was
+faster but lost exact and line detection under the predeclared quality gate.
 
 `--case CASE_ID` on the exporter selects individual cases. Use a new output
 directory for each export; it never overwrites an existing directory. Keep the
