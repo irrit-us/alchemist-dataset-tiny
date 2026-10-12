@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 from pathlib import PurePosixPath
 import shlex
@@ -106,9 +107,15 @@ class AlchemistAgent(BaseAgent):
             args.extend(("--endpoint", self.endpoint))
         command = " ".join(shlex.quote(part) for part in args)
         command += " > /logs/agent/report.json"
+        env = dict(self.extra_env)
+        if self.auth == "api-key":
+            key = env.get("AUDIT_API_KEY") or os.environ.get("AUDIT_API_KEY")
+            if not key:
+                raise ValueError("AUDIT_API_KEY is required in the Harbor process environment")
+            env["AUDIT_API_KEY"] = key
         result = await environment.exec(
             command,
-            env=self.extra_env,
+            env=env,
             cwd="/workspace",
             timeout_sec=max(1, self.timeout_ms // 1000 + 10),
         )

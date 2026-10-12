@@ -73,6 +73,7 @@ def smoke(binary: Path) -> None:
         suite_root = str(Path(__file__).resolve().parent.parent)
         env["PYTHONPATH"] = os.pathsep.join(filter(None, (suite_root, env.get("PYTHONPATH"))))
         env["PYTHONIOENCODING"] = "utf-8"
+        env["AUDIT_API_KEY"] = "fake"
         subprocess.run(
             [
                 str(harbor), "run", "--path", str(task),
@@ -80,7 +81,6 @@ def smoke(binary: Path) -> None:
                 "--model", "mock-model",
                 "--ak", f"binary_path={binary}",
                 "--ak", "endpoint=http://127.0.0.1:8999/v1/chat/completions",
-                "--ae", "AUDIT_API_KEY=fake",
                 "--jobs-dir", str(root / "jobs"),
                 "--job-name", "smoke", "--quiet",
             ],
@@ -89,6 +89,9 @@ def smoke(binary: Path) -> None:
             timeout=900,
         )
         result = json.loads((root / "jobs" / "smoke" / "result.json").read_text())
+        saved_config = (root / "jobs" / "smoke" / "config.json").read_text()
+        if "AUDIT_API_KEY" in saved_config:
+            raise RuntimeError("Harbor serialized the agent credential into its job config")
         stats = result["stats"]
         evals = next(iter(stats["evals"].values()))
         if stats["n_errored_trials"] or evals["metrics"][0]["mean"] != 1.0:

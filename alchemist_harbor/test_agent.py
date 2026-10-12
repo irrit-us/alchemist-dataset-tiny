@@ -6,6 +6,7 @@ from pathlib import Path
 import tempfile
 from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 try:
     from alchemist_harbor.agent import AlchemistAgent
@@ -55,6 +56,25 @@ class AgentIntegrationTests(unittest.TestCase):
             self.assertIn("> /logs/agent/report.json", run_command)
             self.assertNotIn("private-test-key", run_command)
             self.assertEqual(options["env"]["AUDIT_API_KEY"], "private-test-key")
+
+    def test_api_key_comes_from_host_environment_without_harbor_config(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            binary = Path(temporary) / "alchemist"
+            binary.write_bytes(b"\x7fELFfake")
+            agent = AlchemistAgent(
+                logs_dir=Path(temporary), model_name="example-model",
+                binary_path=str(binary), endpoint="https://example.invalid/v1/chat/completions",
+                extra_env={},
+            )
+            environment = FakeEnvironment()
+            with patch.dict("os.environ", {"AUDIT_API_KEY": "host-only-key"}):
+                asyncio.run(agent.run("Audit the target.", environment, None))
+            run_command, options = next(
+                (command, kwargs) for command, kwargs in environment.commands
+                if " audit " in command
+            )
+            self.assertNotIn("host-only-key", run_command)
+            self.assertEqual(options["env"]["AUDIT_API_KEY"], "host-only-key")
 
 
 if __name__ == "__main__":
